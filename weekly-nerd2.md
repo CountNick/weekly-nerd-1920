@@ -1,6 +1,6 @@
 # Weekly nerd Sanne t'Hooft
 
-## Introductie
+## Inleiding
 
 Sanne t'Hooft is een van de docenten bij ons op de opleiding CMD. Hier geeft hij onder andere les aan eerstejaars studenten. Een van deze vakken gaat over hoe je kan ontwerpen met CSS.
 

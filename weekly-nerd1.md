@@ -1,6 +1,6 @@
 # Weekly nerd met Hidde de vries
 
-## Introductie
+## Inleiding
 
 Deze week was Hidde de Vries te gast bij de weekly nerd. Hidde is voor front-end developer en werkt daarnaast ook bij het W3C. Het W3C is het World Wide Web Consortium die de webstandaarden voor het internet bedenken en ontwerpen. 
 
