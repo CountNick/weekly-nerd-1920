@@ -25,4 +25,4 @@ Lars en het Funda team hadden een workshop voor ons voorbereid. Hierbij werd ied
 * Bas
 * Lennart
 
-Binnen de workshop was het de bedoeling dat wij AGILE leerde werken. Elk team had een eigen SCRUM-master
+Binnen de workshop was het de bedoeling dat wij AGILE leerde werken. Elk team had een eigen SCRUM-master die het overzicht van de taken bijhield. De bedoeling van de workshop was merge conflicts creëren die snel opgelost moesten worden. Omdat er zo weinig tijd was voor de workshop en de teams te groot waren voor de features die gemaakt moesten worden is dat helaas blijven liggen. Als we meer tijd hadden gehad waren we hier wel aan toegekomen.
