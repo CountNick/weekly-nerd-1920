@@ -89,3 +89,9 @@ function searchResultsRoute(req, res) {
     }
 }
 ```
+
+# Sources
+
+* https://blogs.perficient.com/2015/01/26/mixing-mpa-and-spa-worst-of-both-worlds/
+* https://medium.com/@NeotericEU/single-page-application-vs-multiple-page-application-2591588efe58
+* https://www.cleveroad.com/blog/single-page-app-vs-multi-page-application-what-to-choose

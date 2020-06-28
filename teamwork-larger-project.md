@@ -23,3 +23,11 @@ bijvoorbeeld:
 Dit was een fijne werkmethode alle css was op deze manier vrij makkelijk te vinden en het was fijn dat er snel een nieuw CSS bestand aangemaakt kon worden voor een nieuw component. Dit is ook erg goed gegaan tot een bepaald moment. Op een gegeven moment begon de tijd te dringen. Het ontwerpen van de applicatie kwam in een stroomversnelling en dit veroorzaakte nogal wat stress bij ons. Door het stressen hebben wij niet meer voor elk aparte component een CSS bestand gemaakt. Dit resulteerde erin dat er CSS regels zijn toegevoegd bij bepaalde CSS bestanden die hier niet perse bij hoorde. Dit maakte het weer lastig om sommige regels CSS te vinden.
 
 # Conclusie
+
+Op een gegeven moment hadden wij een werkmethode die goed werkte. Op een gegven moment is dit fout gegaan omdat we allebei in de stress schoten en dingen graag snel wilden oplossen. Hierdoor zijn wij uiteindelijk toch weer ongeorganiseerd te werk gegaan waardoor het proces soms ook moeizamer ging.
+
+# Sources
+
+* https://www.freecodecamp.org/news/css-naming-conventions-that-will-save-you-hours-of-debugging-35cea737d849/
+* https://medium.com/@drublic/css-naming-conventions-less-rules-more-fun-12af220e949b
+* https://css-tricks.com/bem-101/
