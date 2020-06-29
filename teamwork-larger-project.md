@@ -1,33 +1,131 @@
-# Inleiding
+# Working on css in a team and a growing codebase
 
-Tijdens de meesterproef van de minor web development heb ik samen met een klasgenot samen gewerkt. Hij gaf aan nog niet eerder samen te hebben gewerkt aan een project. Zelf heb ik wel een aantal keren samengewerkt met klasgenoten aan dezelfde Github repo. Wat ik normaal gewend ben om te doen met een samenwerking is om van te voren afspraken te maken over code stijl, het maken van branches, mergen, css of sass etc. Deze keer ben ik dat helemaal vergeten ter sprake te brengen, en mijn teamgenoot heeft dit ook niet gedaan.
+## Introduction
 
-# Goede afspraken maken
+During a the final project of my minor me and a classmate worked on a webapplication as a team.
+My classmate told me he had never worked together on a codebase before. I did have some experience working together with people on the same Github Repo. What i usually do when working in a team is start out with setting up some sort of guidelines to follow about coding style, making branches, merging branches, wheter to use css or sass. This time around we forgot to do this.
 
-Op een gegeven moment kwamen wij erachter dat er toch wel wat afspraken van te voren gemaakt moesten worden voor bijvoorbeeld het opslitsen van CSS code. Wij hadden namelijk eerst een groot CSS bestand waar alles in stond. Dit was heel erg onhandig, telkerns als er iets veranderd moest worden(wat best vaak was) moest je door het hele CSS bestand zoeken naar de regel die je wilde veranderen.
+## Good communication
 
-# Component wise werken
+At a certain moment we came to the conclusion that we weren't going about things in the most efficient way. We had one big css file you had to scroll through everytime you wanted to change some rules. This made the development process a bit tedious at first. 
 
-Na de eerste week hadden wij afgesproken om all onderdelen van de wesbite in componeneten te verdelen. Aangezien de css zou groot werd leek het mij ook wel handig hetzelfde te doen met de CSS. Zo zijn wij tot de oplossing gekomen om voor elk component dat wij maakten, een geleiknamig css bestand te maken. In dit CSS bestand stond alleen de styling van het component met dezelfde naam als het CSS bestand. Al deze CSS bestanden werden elke keer als wij op save drukten gecompiled met Gulp om hier 1 groot css bestand van te maken. 
+## Web components
 
-bijvoorbeeld:
+After doing some research we decided we would make web components out of each ui component in our webapp. This meant that each component got it's own html with it's own custom styling. In the css file of said component would only be css needed for the component it belonged to. All of these isolated css files were compiled to one big css file using Gulp.
 
-* template bestand:
-    playlist.ejs
-* CSS bestand:
-    playlist.css
+For example this is wat the music-player component looked like:
 
+<details><summary>Markdown</summary>
+<p>
 
-# Afspraken nakomen
+```html
+<section class ='controls'>
 
-Dit was een fijne werkmethode alle css was op deze manier vrij makkelijk te vinden en het was fijn dat er snel een nieuw CSS bestand aangemaakt kon worden voor een nieuw component. Dit is ook erg goed gegaan tot een bepaald moment. Op een gegeven moment begon de tijd te dringen. Het ontwerpen van de applicatie kwam in een stroomversnelling en dit veroorzaakte nogal wat stress bij ons. Door het stressen hebben wij niet meer voor elk aparte component een CSS bestand gemaakt. Dit resulteerde erin dat er CSS regels zijn toegevoegd bij bepaalde CSS bestanden die hier niet perse bij hoorde. Dit maakte het weer lastig om sommige regels CSS te vinden.
+    <div class="player-info">
+    <img class="album-art" src="" width="64px" height="64px" alt="">
+    <div class="nowPlaying">
+        <p></p>
+        <strong></strong>
+    </div>
+    </div>
 
-# Conclusie
+    <div class="container">
 
-Op een gegeven moment hadden wij een werkmethode die goed werkte. Op een gegven moment is dit fout gegaan omdat we allebei in de stress schoten en dingen graag snel wilden oplossen. Hierdoor zijn wij uiteindelijk toch weer ongeorganiseerd te werk gegaan waardoor het proces soms ook moeizamer ging.
+    <div class="buttons">
+        <button class="previousButton"><span class="material-icons">skip_previous</span></button>
+        <button class="pauseButton"><span class="material-icons">play_arrow</span></button>
+        <button class="nextButton"><span class="material-icons">skip_next</span></button>
+    </div>
+    
+    <input class="progress"type="range" value="0" step="1" name="" id="">
+
+    </div>
+
+    <div class="volume-container">
+    <span class="material-icons">volume_up</span>
+    <input type="range" class="volume" name="volume" value="1" step="0.1" max="1">
+    </div>
+</section>
+```
+
+</p>
+</details>
+
+<details><summary>CSS</summary>
+<p>
+
+```css
+.controls{
+    background: var(--secondary-color);
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: fixed;
+    bottom: 0;
+    padding: .5rem;
+    color: white;
+    align-items: center;
+}
+
+.progress{
+      width: 100%;
+}
+
+.container{
+      width: 30%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+}
+
+.player-info{
+    display: flex;
+    align-items: center;
+    width: 12em;
+}
+
+.buttons button{
+    padding: 0.5rem;
+    border-radius: 50%;
+    border-style: none;
+}
+
+.buttons button span{
+    color: black;
+}
+
+.nowPlaying{
+    margin-left: .5rem;
+    display: flex;
+    flex-direction: column;
+    height: 4rem;
+    justify-content: space-evenly;
+}
+
+.nowPlaying p:first-of-type{
+    white-space: nowrap;
+}
+```
+
+</p>
+</details>
+
+This isolated component also had it's own js, but the point is to split components up and isolate the styling and markup from the rest of your components. This makes it easier to find thing you have to work on.
+
+## Sticking to your guns
+
+The web components method worked for us. It made it easier to find and make new css files. Everything went fine until our deadline was coming closer. The design of our webapp gained a lot of momentum which resulted in a lot of stress. We had to do a lot of restyling fast, some things were completely erased and a lot of new ideas come in to play. Because of this we forgot about our isolated component styling method which resulted in some messy css in some components in the end. 
+
+## Conclusion
+
+We found a good method for working on css in a growing project with a team. At some point this went sideways because of our deadline coming closer which i think is something you'll deal with in the workfield as well. I learned a lot by working this way and would certainly advice this method to others. The only tip i would like to give people is to stay consistent with your choices. If you go for isolated components keep them isolated even when in stress, this will save you a lot of work after.
+
 
 # Sources
 
 * https://www.freecodecamp.org/news/css-naming-conventions-that-will-save-you-hours-of-debugging-35cea737d849/
 * https://medium.com/@drublic/css-naming-conventions-less-rules-more-fun-12af220e949b
 * https://css-tricks.com/bem-101/
+* https://alistapart.com/blog/post/writing-css-on-growing-teams/
+* https://stackoverflow.com/questions/3618299/big-development-teams-cant-handle-a-single-css-style-sheet
