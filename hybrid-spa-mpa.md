@@ -1,8 +1,10 @@
-# Introduction
+# Making a SPA MPA hybrid with AJAX in Express
+
+## Introduction
 
 Lately i was working on a web application for someone. As it was my first time doing something like this i had already made the decision to make a server side rendered website without asking if this what the client wanted. During the second week of the project it struck me that what we wanted to make couldn't be done over HTTP requests and we were better of making a clientside webapp. But the thing was we already had a bunch of code which was working and didn't want to start over again. So now we had to choose between a Single Page Web Application(SPA) or a mix between Server Side Rendered and Single Page. The only hickup here was i couldn't find any example on how to make a hybrid web application.
 
-# The problem 
+## The problem 
 
 In a traditional website you'd send a request for a website to the server this happens when you type in a url and hit enter. If nothing goes wrong all parts neccassary to make said webpage would be downloaded and displayed on your computer.
 
@@ -10,7 +12,7 @@ In a traditional website you'd send a request for a website to the server this h
 
 The problem with this traditional webpage request is that when a user was to interact with the webpage I wanted a part of the webpage to update without it loading the entire page again. As every task the user had to complete was done on one page this would result in a bad user experience.
 
-# The solution
+## The solution
 
 I found out that this can be done with AJAX. AJAX stands for Asynchronous Javascript and XML however this name is misleading because AJAX applications may use XML to transport data, but it is also very common to transport data as plain text or JSON text. With AJAX it's possible to:
 
@@ -30,18 +32,16 @@ Because it was not possible to progressively enhance the SPA i started looking i
 
 # AJAX search example
 
-
-The HTML code:
+We'll start out by making some simple markup. A basic form with a input of type search:
 
 ```html
-      <form id="quickSearchForm" method="GET" autocomplete="off" action="/searchResults">
-        <button type="submit"><span class="material-icons">search</span></button>
-        <input type="search" id="search" name="searchValue" placeholder="Search" data-search-input="input">
-        <button type="reset"><span class="material-icons">clear</span></button>
-      </form>
+    <form id="quickSearchForm" method="GET" autocomplete="off" action="/searchResults">
+      <button type="submit"><span class="material-icons">search</span></button>
+      <input type="search" id="search" name="searchValue" placeholder="Search" data-search-input="input">
+    </form>
 ```
 
-The javascript code clientside
+To make the AJAX request we need some javascript code on the clientside as well:
 ```js
 //select the searchbar from the DOM
 const searchBar = document.getElementById('search')
@@ -61,22 +61,29 @@ searchBar.addEventListener('input', (event) => {
             //replace the html element you want to replace
             document.querySelector('.search-results').innerHTML = html
 
-        })
-    
+        })  
 })
 
 ```
 
 What happens in this piece of code is that when the user starts typing in the searchbar. The action attribute the form(the method of this formis set to GET) is pointing to(which in my case is the /searchResults route on my express server) is put in a variable called url. We then invoke the fetch() method and pass this the url we we want to fetch from our server and pass the user input as a query and the token as i need that for the external api i am getting data from.
+When you start typing in the search input it should how up on your server, you can test this by logging on the server side:
 
-The server side code:
 ```js
 const express = require('express');
 const app = express();
 const fetch = require('node-fetch');
+const port = process.env.PORT || 4000
 
 app
-  .get('/searchResults', searchResultsRoute)
+  .use(express.static(path.join(__dirname, 'static')))
+  .set('views', __dirname + '/view/pages')
+  .set('view engine', 'ejs')
+  .get('/searchResults', searchResultsRoute);
+
+app.listen(port, () => {
+  console.log(`Dev app listening on port: ${port}`);
+});
 
 
 //this function getss invoked when users get to the /searchResults route
@@ -85,10 +92,9 @@ function searchResultsRoute(req, res) {
   let userInput = req.query.searchValue;
 
 
-    // if the query contains async do this
+  // if the query contains async fetch the data and render the partial
   if(req.query.async){
-      fetch(`url-from-api-you-want-toget-data-from/search/q=${userInput}`,
-      options)
+      fetch(`url-from-api-you-want-toget-data-from/search/q=${userInput}`)
         .then((res) => res.json())
         .then((data) => {
             //only render a partial which has to be updated and give pass the data just fetched with it
@@ -100,30 +106,27 @@ function searchResultsRoute(req, res) {
   } else {
   // if it's not a ajax request render the whole page
   fetch(
-    `url-from-api-you-want-toget-data-from/search/q=${userInput}`,
-    options
-  )
+    `url-from-api-you-want-toget-data-from/search/q=${userInput}`)
     .then((res) => res.json())
     .then((data) => {
         //if it doesn't contain the async boolean fetch the data and render the whole page
         res.render('logged-in', {
             trackData: data,
             data: JSON.parse(req.query.data),
-            token: access_token,
-            userInput: artist
+            userInput: userInput
         })
     }
 }
 ```
 
-The partial template:
+So if the request is Ajax the only thing that needs to be updated is the result-list template which looks like this:
 
 ```ejs
 
 <% if (!trackData) { %>
     <p>no results</p>
 <% } else {%>
-
+// makes listitem for every track in the trackData array
 <% trackData.forEach(track => { %>
 
     <li class="draggableTrack" draggable="true" > 
@@ -132,7 +135,7 @@ The partial template:
         <div> <p><%= track.name %></p>
         <p><%= track.artists[0].name %></p>
         </div>
-        <a id="<%= track.id%>" class="track-info-link" href=<%= `/track/:${track.id}/:${token}` %>>
+        <a id="<%= track.id%>" class="track-info-link" href=<%= `/track/:${track.id}/` %>>
         <span class="material-icons info">info</span>
         </a>
     </li> 
@@ -140,16 +143,17 @@ The partial template:
 <% }) %>
 
 
-<%- include('./recommended-list.ejs', recommendations)%>
-
 <% } %>
 ```
 
-As we had a lot of work done already which we didn't just want to throw away we decided to do some research on hybrid web apps. If we would make a hybrid application we would have the best of both worlds. I started to look for examples but they were pretty much non existant. This is when i remembered a lecture we had from Declan Rek who gave us an example of how to do this using a piece of clientside js.
 
-# Sources
+You can make a hybrid app by using this technique in other componenets of your web app that need to be updated. The great thing about making your application this way is that you can do a page refresh when the user is not able to run javascript on the client and render the whole page with the updated results. 
 
-* https://blogs.perficient.com/2015/01/26/mixing-mpa-and-spa-worst-of-both-worlds/
-* https://medium.com/@NeotericEU/single-page-application-vs-multiple-page-application-2591588efe58
+## Sources
+
+<!-- * https://blogs.perficient.com/2015/01/26/mixing-mpa-and-spa-worst-of-both-worlds/
+* https://medium.com/@NeotericEU/single-page-application-vs-multiple-page-application-2591588efe58 -->
 * https://www.cleveroad.com/blog/single-page-app-vs-multi-page-application-what-to-choose
 * https://stackoverflow.com/questions/44080626/how-to-work-with-hybrid-webapp-mpa-and-spa-combined
+* https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Fetching_data
+* https://www.w3schools.com/whatis/whatis_ajax.asp
