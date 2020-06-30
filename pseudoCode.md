@@ -2,13 +2,13 @@
 
 ## Lost in translation
 
-Some time ago i was making a card game with the help of socket io. When i first got the idea of making a card game iremember thinking it would be kind of hard. Nevertheless i just started coding like i always do. After some time i kept running into issues and i was getting stuck after fixing one issue. This made me think i was working on something that couldn't be done. In the process of making this card game i realized i never really think of a possible solution before i start coding. I just start coding and try to wing it through the process. This never really bothered me before but now i started to realize this was taking me a lot of extra time which wasn't even necessary if i started to think of possible solutions before starting to code.
+Some time ago I was making a card game with the help of socket io. When I first got the idea of making a card game I remember thinking it would be kind of hard. Nevertheless I just started coding like I always do. After some time I kept running into issues and I was getting stuck after fixing one issue. This made me think I was working on something that couldn't be done. In the process of making this card game I realized I never really think of a possible solution before I start coding. I just start coding and try to wing it through the process. This never really bothered me before but now I started to realize this was taking me a lot of extra time which wasn't even necessary if I started to think of possible solutions before starting to code.
 
 > Strategy without tactics is the noise before defeat
 
 ## Psuedocode to the rescue
 
-I realised that i could plan a strategy out by writing things in pseudocode before actually coding. What is pseudocode you ask? Pseudocode basically is an informal way of pragramming that does not require any strict programming language syntax or underlying technology considerations. This can for example be done by placing code comments with the steps you have to complete in order to solve your issue.
+I realised that I could plan a strategy out by writing things in pseudocode before actually coding. What is pseudocode you ask? Pseudocode basically is an informal way of programming that does not require any strict programming language syntax or underlying technology considerations. This can for example be done by placing code comments with the steps you have to complete in order to solve your issue and can help you figure things out quicker.
 
 
 ## Example 

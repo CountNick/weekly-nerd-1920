@@ -1,13 +1,14 @@
 # Working on css in a team and a growing codebase
 
-## Introduction
+## Team CSS
 
-During a the final project of my minor me and a classmate worked on a webapplication as a team.
-My classmate told me he had never worked together on a codebase before. I did have some experience working together with people on the same Github Repo. What i usually do when working in a team is start out with setting up some sort of guidelines to follow about coding style, making branches, merging branches, wheter to use css or sass. This time around we forgot to do this.
+This article is about structuring CSS when working in a team and a growing codebase. I realised this is something i was struggling with during one of the projects I was working on. It also became appereant to me that I'm not the only one who is struggling with structure when working in a team. That's why i thought it would be a good idea to write something about it so maybe you could learn from my mistakes.
+
 
 ## Good communication
 
-At a certain moment we came to the conclusion that we weren't going about things in the most efficient way. We had one big css file you had to scroll through everytime you wanted to change some rules. This made the development process a bit tedious at first. 
+During a the final project of my minor me and a classmate worked on a webapplication as a team.
+My classmate told me he had never worked together on a codebase before. I did have some experience working together with people on the same Github Repo. What i usually do when working in a team is start out with setting up some sort of guidelines to follow about coding style, making branches, merging branches, wheter to use css or sass. This time around we forgot to do this. At a certain moment we came to the conclusion that we weren't going about things in the most efficient way. We had one big css file you had to scroll through everytime you wanted to change some rules. This made the development process a bit tedious at first. 
 
 ## Web components
 
