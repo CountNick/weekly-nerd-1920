@@ -15,7 +15,8 @@ We werden welkom geheten door Lars een oude CMD student. Lars liet ons zien hoe 
 
 ## Workshop
 
-Lars en het Funda team hadden een workshop voor ons voorbereid. Hierbij werd iedereen uit de klas random in een team ingedeeld. Elk team moest een onderdeel van de website bouwen en dit voor het einde samenvoegen, hier hadden wij maar anderhalf uur de tijd voor. Ik zat in het team met:
+Lars en het Funda team hadden een workshop voor ons voorbereid.
+Hierbij werd iedereen uit de klas random in een team ingedeeld. Elk team moest een onderdeel van de website bouwen en dit voor het einde samenvoegen, hier hadden wij maar anderhalf uur de tijd voor. Ik zat in het team met:
 
 * Wouter
 * Leroy
@@ -25,4 +26,8 @@ Lars en het Funda team hadden een workshop voor ons voorbereid. Hierbij werd ied
 * Bas
 * Lennart
 
-Binnen de workshop was het de bedoeling dat wij AGILE leerde werken. Elk team had een eigen SCRUM-master die het overzicht van de taken bijhield. De bedoeling van de workshop was merge conflicts creëren die snel opgelost moesten worden. Omdat er zo weinig tijd was voor de workshop en de teams te groot waren voor de features die gemaakt moesten worden is dat helaas blijven liggen. Als we meer tijd hadden gehad waren we hier wel aan toegekomen.
+Zij hadden een deel van een codebase voor de Funda website met ons gedeeld. De frontend was opgezet met behulp van het Vue framework waar een paar mensen uit onze groep al wel wat ervaring mee hadden. Wij hadden de opdracht gekregen de zoekfunctie van de website te maken.
+
+## Conclusie
+
+Binnen de workshop was het de bedoeling dat wij AGILE leerde werken. Elk team had een eigen SCRUM-master die het overzicht van de taken bijhield. De bedoeling van de workshop was merge conflicts te creëren die snel opgelost moesten worden. Omdat er zo weinig tijd was voor de workshop en de teams te groot waren voor de features die gemaakt moesten worden is dat helaas blijven liggen. Als we meer tijd hadden gehad waren we hier wel aan toegekomen. Uiteindelijk is het ons wel gelukt om een werkende zoekfunctie te maken
