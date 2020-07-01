@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Lately i was working on a web application for someone. As it was my first time doing something like this i had already made the decision to make a server side rendered website without asking if this what the client wanted. During the second week of the project it struck me that what we wanted to make couldn't be done over HTTP requests and we were better of making a clientside webapp. But the thing was we already had a bunch of code which was working and didn't want to start over again. So now we had to choose between a Single Page Web Application(SPA) or a mix between Server Side Rendered and Single Page. The only hickup here was i couldn't find any example on how to make a hybrid web application.
+Lately I was working on a web application for someone. As it was my first time doing something like this I had already made the decision to make a server side rendered website without asking if this what the client wanted. During the second week of the project it struck me that what we wanted to make couldn't be done over HTTP requests and we were better of making a clientside webapp. But the thing was we already had a bunch of code which was working and didn't want to start over again. So now we had to choose between a Single Page Web Application(SPA) or a mix between Server Side Rendered and Single Page. The only hickup here was I couldn't find any example on how to make a hybrid web application.
 
 ## The problem 
 
@@ -22,6 +22,7 @@ I found out that this can be done with AJAX. AJAX stands for Asynchronous Javasc
 
 ![AJAX](https://mdn.mozillademos.org/files/6477/moderne-web-site-architechture@2x.png)
 
+
 <!-- # SPA or SSR
 
 I started of by researching the differences between Single Page Applications and Server Side Rendered pages. The main thing we could not reach with SSR is passing states because the page would refresh if you ought to go to a new page. Keeping track on state is easy to do in a SPA because theres no HTTP request send out which means no page reload, everything basically happens on one page. The only big disadvantage to a SPA is that everything is handled on the clientside, this means that if a user doesn't have javascript the app won't work. 
@@ -31,6 +32,8 @@ I started of by researching the differences between Single Page Applications and
 Because it was not possible to progressively enhance the SPA i started looking into rendering a SPA on the server side. However i quickly came to the conclusion this wasn't the right answer for my issue either. A Server Side rendered SPA basically means that the initial page is rendered on the server and sent back to the client. So if a user is not able to use javascript he or she will only be able to see the homepage of the application, and won't be able to interact with it. -->
 
 # AJAX search example
+
+I recalled an example that was given to us by [Declan Rek](https://github.com/decrek/progressive-web-apps-1920/blob/master/examples/movies-example/src/js/search.js). He used a input form to send a query to the server in the background. I just didn't really get how it worked and decided to do some further research on it and try to explain how this works in my own words.
 
 We'll start out by making some simple markup. A basic form with a input of type search:
 
@@ -66,7 +69,7 @@ searchBar.addEventListener('input', (event) => {
 
 ```
 
-What happens in this piece of code is that when the user starts typing in the searchbar. The action attribute the form(the method of this formis set to GET) is pointing to(which in my case is the /searchResults route on my express server) is put in a variable called url. We then invoke the fetch() method and pass this the url we we want to fetch from our server and pass the user input as a query and the token as i need that for the external api i am getting data from.
+What happens in this piece of code is that when the user starts typing in the searchbar. The action attribute the form(the method of this formis set to GET) is pointing to(which in my case is the /searchResults route on my express server) is put in a variable called url. We then invoke the fetch() method and pass this the url we we want to fetch from our server and pass the user input as a query and the token as I need that for the external api i am getting data from.
 When you start typing in the search input it should how up on your server, you can test this by logging on the server side:
 
 ```js
@@ -157,3 +160,4 @@ You can make a hybrid app by using this technique in other componenets of your w
 * https://stackoverflow.com/questions/44080626/how-to-work-with-hybrid-webapp-mpa-and-spa-combined
 * https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Fetching_data
 * https://www.w3schools.com/whatis/whatis_ajax.asp
+* https://github.com/decrek/progressive-web-apps-1920/blob/master/examples/movies-example/src/js/search.js

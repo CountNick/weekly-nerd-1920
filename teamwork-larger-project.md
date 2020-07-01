@@ -2,7 +2,7 @@
 
 ## Team CSS
 
-This article is about structuring CSS when working in a team and a growing codebase. I realised this is something i was struggling with during one of the projects I was working on. It also became appereant to me that I'm not the only one who is struggling with structure when working in a team. That's why i thought it would be a good idea to write something about it so maybe you could learn from my mistakes.
+This article is about structuring CSS when working in a team and a growing codebase. I realised this is something I was struggling with during one of the projects I was working on. It also became appereant to me that I'm not the only one who is struggling with structure when working in a team. That's why I thought it would be a good idea to write something about it so maybe you could learn from my mistakes.
 
 
 ## Good communication
@@ -10,13 +10,13 @@ This article is about structuring CSS when working in a team and a growing codeb
 During a the final project of my minor me and a classmate worked on a webapplication as a team.
 My classmate told me he had never worked together on a codebase before. I did have some experience working together with people on the same Github Repo. What i usually do when working in a team is start out with setting up some sort of guidelines to follow about coding style, making branches, merging branches, wheter to use css or sass. This time around we forgot to do this. At a certain moment we came to the conclusion that we weren't going about things in the most efficient way. We had one big css file you had to scroll through everytime you wanted to change some rules. This made the development process a bit tedious at first. 
 
-## Web components
+## Components
 
 After doing some research we decided we would make web components out of each ui component in our webapp. This meant that each component got it's own html with it's own custom styling. In the css file of said component would only be css needed for the component it belonged to. All of these isolated css files were compiled to one big css file using Gulp.
 
 For example this is wat the music-player component looked like:
 
-<details><summary>Markdown</summary>
+<details><summary>Markup</summary>
 <p>
 
 ```html
@@ -120,7 +120,7 @@ The web components method worked for us. It made it easier to find and make new 
 
 ## Conclusion
 
-We found a good method for working on css in a growing project with a team. At some point this went sideways because of our deadline coming closer which i think is something you'll deal with in the workfield as well. I learned a lot by working this way and would certainly advice this method to others. The only tip i would like to give people is to stay consistent with your choices. If you go for isolated components keep them isolated even when in stress, this will save you a lot of work after.
+We found a good method for working on css in a growing project with a team. At some point this went sideways because of our deadline coming closer which I think is something you'll deal with in the workfield as well. I learned a lot by working this way and would certainly advice this method to others. The only tip I would like to give people is to stay consistent with your choices. If you go for isolated components keep them isolated even when in stress, this will save you a lot of work in the long run.
 
 
 # Sources
