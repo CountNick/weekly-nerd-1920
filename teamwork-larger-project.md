@@ -120,7 +120,7 @@ The web components method worked for us. It made it easier to find and make new 
 
 ## Conclusion
 
-We found a good method for working on css in a growing project with a team. At some point this went sideways because of our deadline coming closer which I think is something you'll deal with in the workfield as well. I learned a lot by working this way and would certainly advice this method to others. The only tip I would like to give people is to stay consistent with your choices. If you go for isolated components keep them isolated even when in stress, this will save you a lot of work in the long run.
+We found a good method for working on css in a growing project with a team. At some point this went sideways because of our deadline coming closer which I think is something you'll deal with in the workfield as well. I learned a lot by working this way and would certainly advice this method to others. The only tip I would like to give people is to stay consistent with your choices. If you go for isolated components keep them isolated even when in stress, this will save you a lot of work in the long run. The method works great. But remember to maintain discipline, even when the team is performing under stress. Otherwise you find yourself back at messy square one before you know it
 
 
 # Sources

@@ -43,6 +43,10 @@ The best thing about pseudocode is that it allows you to focus on the algorithmw
 
 Writing things out in pseudocode was really beneficial for me. It helps me getting my rough idea's and outlines of what the (piece of code) should do out of my head which makes it easier to test thing out. Starting to code without thinking having a goal can be really frustrating cause you sometimes don't know where to continue from anymore. I would advice every programmer to at least try out pseudocode.
 
+## Concluding
+
+Starting with good Pseudocode helps to keep a good overview. Writing the actual code for each of the parts one by one makes it easier to test and fix bugs. Because now you can start with each following step when the preceding step is tested and stable
+
 ## sources
 
 * [Why you should write more pseudo code](https://medium.com/@yonatandoron/why-you-should-write-more-pseudo-code-a3a27bcffbd4)
